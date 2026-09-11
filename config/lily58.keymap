@@ -15,6 +15,7 @@
 #define LAYER_space_hold 2
 #define LAYER_symbols 3
 #define LAYER_a_windows 4
+#define LAYER_game1 5
 
 &mt {
     flavor = "tap-preferred";
@@ -184,11 +185,11 @@ behaviors {
             display-name = "Lower";
 
             bindings = <
-&none     &none  &none  &none   &none   &none                        &none       &none     &none     &none    &none     &none 
-&none     &none  &none  &none   &none   &none                        &none       &none     &none     &none    &none     &none 
-&none     &none  &none  &none   &none   &none                        &none       &none     &none     &none    &none     &none 
-&none     &none  &none  &none   &none   &none    &none    &none      &none       &none     &none     &none    &none     &none 
-                        &none   &none   &none     &none    &none     &none       &none     &none 
+           &none    &kp HOME            &none       &none       &none          &none                                                                 &none    &none      &none   &none   &none   &none
+           &none    &kp LEFT           &kp UP     &kp END   &kp PG_UP      &kp PG_DN                                                                 &none   &kp N7     &kp N8  &kp N9   &none   &none
+           &none  &kp LS(N3)         &kp DOWN   &kp RIGHT     &kp RET      &kp MINUS                                                                 &none   &kp N4     &kp N5  &kp N6   &none   &none
+           &none       &none       &kp LS(N2)  &kp LS(N5)  &kp LS(N8)  &kp LS(EQUAL)  &none                                            &none         &none   &kp N1     &kp N2  &kp N3   &none   &none
+                                                            &kp LCTRL       &kp BSPC   &kp SPACE  &mt LS(N0) LS(N9)                    &none        &kp N0   &kp DOT &kp COMMA 
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -198,11 +199,11 @@ behaviors {
             display-name = "Raise";
 
             bindings = <
-&none     &none  &none  &none   &none   &none                        &none       &none     &none     &none    &none     &none 
-&none     &none  &none  &none   &none   &none                        &none       &none     &none     &none    &none     &none 
-&none     &none  &none  &none   &none   &none                        &none       &none     &none     &none    &none     &none 
-&none     &none  &none  &none   &none   &none    &none    &none      &none       &none     &none     &none    &none     &none 
-                        &none   &none   &none     &none    &none     &none       &none     &none 
+ &bootloader             &none              &none        &none             &none      &none                                                    &bootloader    &none      &none   &none   &none  &to LAYER_game1
+       &none         &kp LSHFT          &kp LCTRL     &kp HOME           &kp END  &kp PG_UP                                                          &none   &kp N7     &kp N8  &kp N9   &none            &none
+    &kp CAPS       &kp LA(TAB)    &kp LC(LS(TAB))  &kp LC(TAB)           &kp RET  &kp PG_DN                                                          &none   &kp N4     &kp N5  &kp N6   &none            &none
+     &kp F15  &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))       &kp F5          &mkp MB4   &mkp MB5   &kp F14                                        &none   &none   &kp N1     &kp N2  &kp N3   &none            &none
+                                                     &kp PSCRN             &none      &none     &kp F13                                      &none  &kp N0   &kp DOT &kp COMMA 
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -211,11 +212,11 @@ behaviors {
             display-name = "Adjust";
 
             bindings = <
-&none     &none  &none  &none   &none   &none                        &none       &none     &none     &none    &none     &none 
-&none     &none  &none  &none   &none   &none                        &none       &none     &none     &none    &none     &none 
-&none     &none  &none  &none   &none   &none                        &none       &none     &none     &none    &none     &none 
-&none     &none  &none  &none   &none   &none    &none    &none      &none       &none     &none     &none    &none     &none 
-                        &none   &none   &none     &none    &none     &none       &none     &none 
+    &none       &none         &none                  &none              &none          &none                                                           &none      &none          &none        &none         &none          &none
+    &none  &kp LS(N6)  &kp LS(BSLH)             &kp LS(N7)      &kp LS(MINUS)     &kp LS(N4)                                                       &kp PG_UP  &kp PG_DN        &tildsl        &none         &none  &mt RBKT LBKT
+ &kp CAPS   &kp EQUAL    &kp LS(N1)  &mt LS(RBKT) LS(LBKT)  &mt LS(N0) LS(N9)      &kp MINUS                                                        &kp LEFT   &kp DOWN         &kp UP    &kp RIGHT  &kp LS(SEMI)    &kp LS(SQT)
+    &none  &kp LS(N3)    &kp LS(N2)             &kp LS(N5)         &kp LS(N8)  &kp LS(EQUAL)  &none                                         &none   &kp HOME    &kp END  &kp LS(COMMA)  &kp LS(DOT)      &kp BSLH          &none
+                                                     &none          &kp BSPC       &kp SPACE  &kp DEL                                        &none     &none      &none          &none 
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -224,11 +225,24 @@ behaviors {
             display-name = "Extra";
 
             bindings = <
-&none     &none  &none  &none   &none   &none                        &none       &none     &none     &none    &none     &none 
-&none     &none  &none  &none   &none   &none                        &none       &none     &none     &none    &none     &none 
-&none     &none  &none  &none   &none   &none                        &none       &none     &none     &none    &none     &none 
-&none     &none  &none  &none   &none   &none    &none    &none      &none       &none     &none     &none    &none     &none 
-                        &none   &none   &none     &none    &none     &none       &none     &none 
+  &none   &none     &none         &none          &none      &none                                                                       &none         &none          &none       &none   &none   &none
+  &none  &kp N9    &kp N5        &kp N6         &kp N7     &kp N8                                                                       &none         &none          &none       &none   &none   &none
+  &none   &none    &kp N1        &kp N2         &kp N3     &kp N4                                                                   &kp LC(D)  &kp LC(LEFT)  &kp LC(RIGHT)  &kp LC(F4)   &none   &none
+  &none   &none  &kp LEFT      &kp DOWN         &kp UP  &kp RIGHT     &none                                                      &none  &none         &none          &none       &none   &none   &none
+                                      &kp LC(LEFT)  &kp LC(RIGHT)   &kp LS(LEFT)  &kp LS(RIGHT)                            &none     &kp LCTRL      &kp TAB          &none 
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+        LAYER_game1 {
+            display-name = "Extra";
+
+            bindings = <
+   &kp ESC  &mt F1 N1  &mt F2 N2  &mt F3 N3  &mt F4 N4  &mt F5 N5                                                                          &mt F6 N6  &mt F7 N7            &mt F8 N8        &mt F9 N9         &mt F10 N0    &mt F11 MINUS
+   &kp TAB      &kp Q      &kp W      &kp E      &kp R      &kp T                                                                              &kp Y      &kp U                &kp I            &kp O              &kp P    &mt RBKT LBKT
+ &kp LCTRL      &kp A      &kp S      &kp D      &kp F      &kp G                                                                              &kp H      &kp J                &kp K            &kp L  &mt LS(SEMI) SEMI  &mt LS(SQT) SQT
+ &kp LSHFT      &kp Z      &kp X      &kp C      &kp V      &kp B                                                                              &kp N      &kp M  &mt LS(COMMA) COMMA  &mt LS(DOT) DOT      &mt BSLH FSLH      &mt DOWN UP
+                                      &kp LALT   &kp BSPC   &kp SPACE  &kp DEL                                                &to LAYER_Base  &kp LCTRL  &se LSHFT RET &kp RET
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
