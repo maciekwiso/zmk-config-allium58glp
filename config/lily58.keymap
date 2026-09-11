@@ -16,15 +16,14 @@
 #define LAYER_symbols 3
 #define LAYER_a_windows 4
 
-// mt
-&mx {
+&mt {
     flavor = "tap-preferred";
     quick-tap-ms = <200>;
     require-prior-idle-ms = <100>;
     tapping-term-ms = <250>;
 };
-// lt
-&lx {
+
+&lt {
     flavor = "tap-preferred";
     quick-tap-ms = <200>;
     require-prior-idle-ms = <100>;
@@ -171,11 +170,11 @@ behaviors {
             display-name = "Base";
 
             bindings = <
-          &mx F12 GRAVE    &mx F1 N1       &mx F2 N2     &mx F3 N3        &mx F4 N4       &mx F5 N5                                                                                  &mx F6 N6          &mx F7 N7            &mx F8 N8        &mx F9 N9         &mx F10 N0    &mx F11 MINUS
-                &kp TAB        &kp Q  &mx LS(BSLH) W  &mx LS(N7) E  &mx LS(MINUS) R           &kp T                                                                                      &kp Y              &kp U                &kp I            &kp O              &kp P    &mx RBKT LBKT
- &lx LAYER_esc_hold ESC    &mxwc 0 A     &mx LSHFT S   &mx LCTRL D     &mx LS(N9) F  &mx KP_MINUS G                                                                                      &kp H              &kp J                &kp K            &kp L  &mx LS(SEMI) SEMI  &mx LS(SQT) SQT
-           &mx LALT INS  &mx LC(Z) Z     &mx LC(X) X   &mx LC(C) C      &mx LC(V) V           &kp B       &td0                                                              &td1    &mx HOME N          &mx END M  &mx LS(COMMA) COMMA  &mx LS(DOT) DOT      &mx BSLH FSLH      &mx DOWN UP
-                                                      &mx LALT INS         &kp BSPC &lx LAYER_space_hold SPACE  &kp DEL                                               &kp LCTRL  &se LSHFT RET  &mo LAYER_symbols             &kp LGUI
+          &mt F12 GRAVE    &mt F1 N1       &mt F2 N2     &mt F3 N3        &mt F4 N4       &mt F5 N5                                                                                  &mt F6 N6          &mt F7 N7            &mt F8 N8        &mt F9 N9         &mt F10 N0    &mt F11 MINUS
+                &kp TAB        &kp Q  &mt LS(BSLH) W  &mt LS(N7) E  &mt LS(MINUS) R           &kp T                                                                                      &kp Y              &kp U                &kp I            &kp O              &kp P    &mt RBKT LBKT
+ &lt LAYER_esc_hold ESC    &mtwc 0 A     &mt LSHFT S   &mt LCTRL D     &mt LS(N9) F  &mt KP_MINUS G                                                                                      &kp H              &kp J                &kp K            &kp L  &mt LS(SEMI) SEMI  &mt LS(SQT) SQT
+           &mt LALT INS  &mt LC(Z) Z     &mt LC(X) X   &mt LC(C) C      &mt LC(V) V           &kp B       &td0                                                              &td1    &mt HOME N          &mt END M  &mt LS(COMMA) COMMA  &mt LS(DOT) DOT      &mt BSLH FSLH      &mt DOWN UP
+                                                      &mt LALT INS         &kp BSPC &lt LAYER_space_hold SPACE  &kp DEL                                               &kp LCTRL  &se LSHFT RET  &mo LAYER_symbols             &kp LGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
