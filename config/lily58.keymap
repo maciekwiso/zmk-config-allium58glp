@@ -162,6 +162,18 @@ behaviors {
     };
 };
 
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_F4 {
+            key-positions = <38 40>;
+            bindings = <&kp LA(F4)>;
+            layers = <LAYER_space_hold>;
+        };
+    };
+};
+
 
 / {
     keymap {
