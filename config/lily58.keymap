@@ -17,6 +17,67 @@
 #define LAYER_a_windows 4
 #define LAYER_game1 5
 
+/* Key positions */
+
+#define POS_LH_C1R1 0
+#define POS_LH_C2R1 1
+#define POS_LH_C3R1 2
+#define POS_LH_C4R1 3
+#define POS_LH_C5R1 4
+#define POS_LH_C6R1 5
+#define POS_RH_C1R1 6
+#define POS_RH_C2R1 7
+#define POS_RH_C3R1 8
+#define POS_RH_C4R1 9
+#define POS_RH_C5R1 10
+#define POS_RH_C6R1 11
+#define POS_LH_C1R2 12
+#define POS_LH_C2R2 13
+#define POS_LH_C3R2 14
+#define POS_LH_C4R2 15
+#define POS_LH_C5R2 16
+#define POS_LH_C6R2 17
+#define POS_RH_C1R2 18
+#define POS_RH_C2R2 19
+#define POS_RH_C3R2 20
+#define POS_RH_C4R2 21
+#define POS_RH_C5R2 22
+#define POS_RH_C6R2 23
+#define POS_LH_C1R3 24
+#define POS_LH_C2R3 25
+#define POS_LH_C3R3 26
+#define POS_LH_C4R3 27
+#define POS_LH_C5R3 28
+#define POS_LH_C6R3 29
+#define POS_RH_C1R3 30
+#define POS_RH_C2R3 31
+#define POS_RH_C3R3 32
+#define POS_RH_C4R3 33
+#define POS_RH_C5R3 34
+#define POS_RH_C6R3 35
+#define POS_LH_C1R4 36
+#define POS_LH_C2R4 37
+#define POS_LH_C3R4 38
+#define POS_LH_C4R4 39
+#define POS_LH_C5R4 40
+#define POS_LH_C6R4 41
+#define POS_RH_C1R4 42
+#define POS_RH_C2R4 43
+#define POS_RH_C3R4 44
+#define POS_RH_C4R4 45
+#define POS_RH_C5R4 46
+#define POS_RH_C6R4 47
+#define POS_LH_T1 48
+#define POS_LH_T2 49
+#define POS_LH_T3 50
+#define POS_LH_T4 51
+#define POS_LH_T5 52
+#define POS_RH_T1 53
+#define POS_RH_T2 54
+#define POS_RH_T3 55
+#define POS_RH_T4 56
+#define POS_RH_T5 57
+
 &mt {
     flavor = "tap-preferred";
     quick-tap-ms = <200>;
@@ -191,7 +252,7 @@ behaviors {
         compatible = "zmk,combos";
 
         combo_F4 {
-            key-positions = <38 40>;
+            key-positions = <POS_LH_C3R4 POS_LH_C5R4>;
             bindings = <&kp LA(F4)>;
             layers = <LAYER_space_hold>;
         };
@@ -218,7 +279,7 @@ behaviors {
         };
 
         LAYER_esc_hold {
-            display-name = "Lower";
+            display-name = "esc";
 
             bindings = <
            &none    &kp HOME            &none       &none       &none          &none                                                                 &none    &none      &none   &none   &none   &none
@@ -232,7 +293,7 @@ behaviors {
         };
 
         LAYER_space_hold {
-            display-name = "Raise";
+            display-name = "space";
 
             bindings = <
  &bootloader             &none              &gm        &gp                 &none      &none                                                    &bootloader    &none      &none   &none   &none  &to LAYER_game1
@@ -245,7 +306,7 @@ behaviors {
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
         LAYER_symbols {
-            display-name = "Adjust";
+            display-name = "symbols";
 
             bindings = <
     &none       &none         &none                  &none              &none          &none                                                           &none      &none          &none        &none         &none          &none
@@ -258,20 +319,20 @@ behaviors {
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
         LAYER_a_windows {
-            display-name = "Extra";
+            display-name = "win";
 
             bindings = <
   &none   &none     &none         &none          &none      &none                                                                       &none         &none          &none       &none   &none   &none
   &none  &kp N9    &kp N5        &kp N6         &kp N7     &kp N8                                                                       &none         &none          &none       &none   &none   &none
   &none   &none    &kp N1        &kp N2         &kp N3     &kp N4                                                                   &kp LC(D)  &kp LC(LEFT)  &kp LC(RIGHT)  &kp LC(F4)   &none   &none
   &none   &none  &kp LEFT      &kp DOWN         &kp UP  &kp RIGHT     &none                                                      &none  &none         &none          &none       &none   &none   &none
-                                      &kp LC(LEFT)  &kp LC(RIGHT)   &kp LS(LEFT)  &kp LS(RIGHT)                            &none     &kp LCTRL      &kp TAB          &none 
+                                      &kp LC(LEFT)  &kp LC(RIGHT)   &kp LS(LEFT)  &kp LS(RIGHT)                                     &kp LCTRL       &kp TAB          &none       &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
         LAYER_game1 {
-            display-name = "Extra";
+            display-name = "clean";
 
             bindings = <
    &kp ESC  &mt F1 N1  &mt F2 N2  &mt F3 N3  &mt F4 N4  &mt F5 N5                                                                          &mt F6 N6  &mt F7 N7            &mt F8 N8        &mt F9 N9         &mt F10 N0    &mt F11 MINUS
